@@ -31,7 +31,7 @@ input.onButtonPressed(Button.A, function () {
 ```
 
 ## Thanks
-THanks for joining us!
+Thanks for joining us!
 
 ```package
 loops
