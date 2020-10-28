@@ -30,3 +30,11 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
+## Thanks
+THanks for joining us!
+
+```package
+loops
+input
+kitronik-move-motor=github:KitronikLtd/pxt-kitronik-move-motor
+```
