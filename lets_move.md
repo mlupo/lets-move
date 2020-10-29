@@ -20,7 +20,7 @@ input.onButtonPressed(Button.A, function () {
 Click on the **Move Motor** drawer, then select the **Motors** subcategory.  
 
 Find the **move Forward at speed 0** block, and drag it into ``||input:on button A pressed||``. Change the number **0** to **30**.  
-Next, from the ``||Basic:basic||`` find the ``||Basic:pause (ms) 100||`` block, and add it underneath the **move** block in your code. Change the **100** to **1000** (or 1 second).
+Next, from the ``||Basic:basic||`` drawer find the ``||Basic:pause (ms) 100||`` block, and add it underneath the **move** block in your code. Change the **100** to **1000** (or 1 second).
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -37,24 +37,53 @@ If you've gotten this far tell the instructor you're ready to put this code on t
 
 ## _
 ### Make it Turn!
-From the **Move Motor** drawer, find the **spin Left at speed 0** block, and place it under the ``||basic:pause (ms) 1000||`` block in your code.  
+From the **Move Motor -> Motors** drawer, find the **spin Left at speed 0** block, and place it under the ``||basic:pause (ms) 1000||`` block in your code.  
+Change the number **0** to **30**.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
     Kitronik_Move_Motor.move(Kitronik_Move_Motor.DriveDirections.Forward, 30)
     basic.pause(1000)
     // @highlight
-    Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Right, 30)
-    basic.pause(250)
+    Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 30)
+})
+```
+## _
+From the ``||Basic:basic||`` drawer find the ``||Basic:pause (ms) 100||`` block, and add it underneath the **spin** block in your code. Change the **100** to **200**.
+Finally, from the **Move Motor -> Motors** drawer, find the **stop** block and put it at the bottom of your code.
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    Kitronik_Move_Motor.move(Kitronik_Move_Motor.DriveDirections.Forward, 30)
+    basic.pause(1000)
+    Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 30)
+    basic.pause(200)
+    // @highlight
     Kitronik_Move_Motor.stop()
 })
 ```
 
 ## _
 ### Make it Loop!
-Now let's try to loop our existing code so that our buggy drives in a square pattern.  
+Now let's try to loop our existing code so that our buggy drives in a square pattern. After this step, you should try to upload your code to the micro:bit again!
 
-From the ``||loops:loops||`` drawer, find the ``||loops:
+From the ``||loops:loops||`` drawer, find the ``||loops:repeat 4 times||`` block, and place it over the existing code in the ``||input:on button A pressed||`` block.  
+If you place the ``||loops:loops||`` block carefully, it will snap perfectly in place, with all of your previous code inside of it. Either way, just make sure your code looks like the code in the hint!  
+
+Now, upload your code to the micro:bit, and see if your buggy turns in the circle! The next step has some tips, if things went really wrong!
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 4; index++) {
+        Kitronik_Move_Motor.move(Kitronik_Move_Motor.DriveDirections.Forward, 30)
+        basic.pause(1000)
+        Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 30)
+        basic.pause(250)
+        // @highlight
+        Kitronik_Move_Motor.stop()
+    }
+})
+```
 
 ## Thanks
 Thanks for joining us!
