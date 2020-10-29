@@ -29,6 +29,20 @@ input.onButtonPressed(Button.A, function () {
     basic.pause(1000)
 })
 ```
+
+## _
+### But Also... Stop
+Next, from the **Move Motor -> Motors** drawer, find the **stop** block and put it at the bottom of your code, in the ``||input:on button A pressed||`` block.
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    Kitronik_Move_Motor.move(Kitronik_Move_Motor.DriveDirections.Forward, 30)
+    basic.pause(1000)
+    // @highlight
+    Kitronik_Move_Motor.stop()
+})
+```
+
 ## _ @unplugged
 ### Hold on Wait a Minute!
 Okay! Let's put this code on the micro:bit!  
@@ -46,31 +60,32 @@ input.onButtonPressed(Button.A, function () {
     basic.pause(1000)
     // @highlight
     Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 30)
+    Kitronik_Move_Motor.stop()
 })
 ```
 ## _
-From the ``||Basic:basic||`` drawer find the ``||Basic:pause (ms) 100||`` block, and add it underneath the **spin** block in your code. Change the **100** to **200**.
-Finally, from the **Move Motor -> Motors** drawer, find the **stop** block and put it at the bottom of your code.
+From the ``||Basic:basic||`` drawer find the ``||Basic:pause (ms) 100||`` block, and add it underneath the **spin** block in your code.  
+Change the **100** to **250**.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
     Kitronik_Move_Motor.move(Kitronik_Move_Motor.DriveDirections.Forward, 30)
     basic.pause(1000)
     Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 30)
-    basic.pause(200)
     // @highlight
+    basic.pause(250)
     Kitronik_Move_Motor.stop()
 })
 ```
 
 ## _
 ### Make it Loop!
-Now let's try to loop our existing code so that our buggy drives in a square pattern. After this step, you should try to upload your code to the micro:bit again!
+Now let's try to loop our existing code so that our buggy drives in a square pattern.
 
 From the ``||loops:loops||`` drawer, find the ``||loops:repeat 4 times||`` block, and place it over the existing code in the ``||input:on button A pressed||`` block.  
-If you place the ``||loops:loops||`` block carefully, it will snap perfectly in place, with all of your previous code inside of it. Either way, just make sure your code looks like the code in the hint!  
+If you place the ``||loops:loops||`` block carefully, it will snap perfectly in place, with all of your previous code inside of it.  
 
-Now, upload your code to the micro:bit, and see if your buggy turns in the circle! The next step has some tips, if things went really wrong!
+Either way, just make sure your code looks like the code in the hint!  
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -85,8 +100,11 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Thanks
-Thanks for joining us!
+## _
+### Let's test it out!
+Upload your new code to the micro:bit, and see if your buggy turns in the circle! Talk to the instructor if things went really wrong!
+
+
 
 ```package
 loops
