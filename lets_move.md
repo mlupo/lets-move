@@ -94,7 +94,6 @@ input.onButtonPressed(Button.A, function () {
         basic.pause(1000)
         Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 30)
         basic.pause(250)
-        // @highlight
         Kitronik_Move_Motor.stop()
     }
 })
@@ -102,7 +101,9 @@ input.onButtonPressed(Button.A, function () {
 
 ## _
 ### Let's test it out!
-Upload your new code to the micro:bit, and see if your buggy turns in the circle! Talk to the instructor if things went really wrong!
+Upload your new code to the micro:bit, and see if your buggy turns in the circle! Talk to the instructor if things went really wrong!  
+
+If things went really well, click Finish, then your instructor will show you how to add beeps and animations (if there is time)!
 
 
 
