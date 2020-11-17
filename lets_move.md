@@ -110,5 +110,5 @@ If things went really well, click Finish, then your instructor will show you how
 ```package
 loops
 input
-kitronik-move-motor=github:KitronikLtd/pxt-kitronik-move-motor
+kitronik-move-motor=github:mlupo/pxt-kitronik-move-motor
 ```
